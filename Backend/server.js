@@ -16,6 +16,14 @@ const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
 
+app.use(cors({
+    origin: [
+        "https://chat-app-gold-phi.vercel.app/", // Replace with YOUR Vercel URL
+        "http://localhost:3000" // Keep for local development
+    ],
+    credentials: true
+}));
+
 app.use(express.json());
 app.use(cookieParser());
 
