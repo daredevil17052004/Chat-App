@@ -1,12 +1,12 @@
 import dotenv from 'dotenv';
 dotenv.config(); 
+import cors from 'cors'; 
 import path from 'path';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
-
 import connectToMongoDB from './db/connectToMongoDB.js';
 import { app, server } from './socket/socket.js';
 dotenv.config({ path: path.resolve('./backend/.env') });
