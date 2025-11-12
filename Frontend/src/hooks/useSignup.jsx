@@ -15,6 +15,7 @@ const useSignup = () => {
 			const API_URL = import.meta.env.VITE_API_URL || '';
 			const res = await fetch(`${API_URL}/api/auth/signup`, {
 				method: "POST",
+				credentials: "include",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ fullName, username, password, confirmPassword, gender }),
 			});

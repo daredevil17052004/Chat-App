@@ -11,7 +11,9 @@ const useGetConversations = () => {
             setLoading(true);
             try {
                 const API_URL = import.meta.env.VITE_API_URL || '';
-                const res = await fetch(`${API_URL}/api/users`);
+                const res = await fetch(`${API_URL}/api/users`,{
+                    credentials: "include"
+                });
                 const data = await res.json();
                 if (data.error) {
                     throw new Error(data.error);

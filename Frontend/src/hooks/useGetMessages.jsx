@@ -12,7 +12,9 @@ const useGetMessages = () => {
       setLoading(true)
       try {
         const API_URL = import.meta.env.VITE_API_URL || '';
-        const res = await fetch(`${API_URL}/api/messages/${selectedConversation._id}`)
+        const res = await fetch(`${API_URL}/api/messages/${selectedConversation._id}`,{
+          credentials: "include",
+        })
         const data = await res.json()
         if (data.error) throw new Error(data.error)
         setMessages(data)
